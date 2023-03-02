@@ -8,14 +8,12 @@ import lt.code.academy.client.MongoObjectClientProvider;
 import lt.code.academy.data.BankAccount;
 import lt.code.academy.data.User;
 
-import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
 
 public class Main {
 
     private final MongoCollection<User> userCollection;
-    private User user;
 
     public Main(MongoCollection<User> userCollection) {
         this.userCollection = userCollection;
