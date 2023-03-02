@@ -37,10 +37,10 @@ public class Main {
     }
     private void userSelection(Scanner sc, String action) {
         switch (action) {
-            case "1" -> System.out.println("User registartion");
+            case "1" -> createUsers(sc);
             case "2" -> System.out.println("Show Users");
-            case "3" -> System.out.println("Programa baige darba");
-            default -> System.out.println("Tokio veiksmo nera");
+            case "3" -> System.out.println("Program is finished");
+            default -> System.out.println("There is no such choice");
         }
     }
     private void menu() {
@@ -62,9 +62,9 @@ public class Main {
         System.out.println("Enter your account");
         double balance = Double.parseDouble(sc.nextLine());
 
-        List<User> users = new User(null, name, surname, Set.of(new BankAccount(bankName, account, balance)));
+        User user = new User(null, name, surname, Set.of(new BankAccount(bankName, account, balance)));
 
-
+        userCollection.insertOne(user);
 
 
     }
