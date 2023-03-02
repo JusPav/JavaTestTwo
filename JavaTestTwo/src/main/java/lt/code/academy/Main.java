@@ -60,7 +60,7 @@ public class Main {
         String bankName = sc.nextLine();
         System.out.println("Enter your account");
         String account = sc.nextLine();
-        System.out.println("Enter your account");
+        System.out.println("Enter your balance");
         double balance = Double.parseDouble(sc.nextLine());
 
         User user = new User(null, name, surname, Set.of(new BankAccount(bankName, account, balance)));
