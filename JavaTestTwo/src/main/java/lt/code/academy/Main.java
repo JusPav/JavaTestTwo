@@ -32,13 +32,14 @@ public class Main {
             main.menu();
             action = sc.nextLine();
             main.userSelection(sc, action);
-        } while (!action.equals("3"));
+        } while (!action.equals("5"));
     }
     private void userSelection(Scanner sc, String action) {
         switch (action) {
             case "1" -> createUsers(sc);
             case "2" -> showUsers();
-            case "3" -> System.out.println("Program is finished");
+            case "4" -> System.out.println("Transfer money");
+            case "5" -> System.out.println("Program is finished");
             default -> System.out.println("There is no such choice");
         }
     }
@@ -46,7 +47,8 @@ public class Main {
         System.out.println("""
                 1. User registartion
                 2. Show Users
-                3. Exit
+                3. Transfer money
+                4. Exit
                 """);
     }
     private void createUsers(Scanner sc) {
@@ -70,5 +72,8 @@ public class Main {
         for (User user : users) {
             System.out.println(user);
         }
+    }
+    private void transferMoney() {
+
     }
 }
