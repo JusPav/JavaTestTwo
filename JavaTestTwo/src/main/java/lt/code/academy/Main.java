@@ -1,5 +1,6 @@
 package lt.code.academy;
 
+import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
@@ -38,7 +39,7 @@ public class Main {
     private void userSelection(Scanner sc, String action) {
         switch (action) {
             case "1" -> createUsers(sc);
-            case "2" -> System.out.println("Show Users");
+            case "2" -> showUsers();
             case "3" -> System.out.println("Program is finished");
             default -> System.out.println("There is no such choice");
         }
@@ -65,7 +66,11 @@ public class Main {
         User user = new User(null, name, surname, Set.of(new BankAccount(bankName, account, balance)));
 
         userCollection.insertOne(user);
-
-
+    }
+    private void showUsers() {
+        FindIterable<User> users = userCollection.find();
+        for (User user : users) {
+            System.out.println(user);
+        }
     }
 }
